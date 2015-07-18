@@ -19,6 +19,7 @@
     "ejs": "~2.3.2",
     "express": "~4.13.0",
     "express-partials": "^0.3.0",
+    "method-override": "^2.3.4",
     "morgan": "~1.6.1",
     "pg": "^4.4.0",
     "pg-hstore": "^2.3.2",
