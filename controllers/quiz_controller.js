@@ -23,7 +23,7 @@ exports.index = function(req, res) {
 
   }else{ // Búsqueda en el parámetro search
    models.Quiz.findAll(
-   {where: ["pregunta like ?","%" + req.query.search.replace(" ","%") + "%"], order:'pregunta ASC'}).then(function(quizes) {
+   {where: ["lower(pregunta) like lower(?)","%" + req.query.search.replace(" ","%") + "%"], order:'pregunta ASC'}).then(function(quizes) {
       res.render('quizes/index', { quizes: quizes, errors:[]});
      }
    ).catch(function(error) { next(error);});
