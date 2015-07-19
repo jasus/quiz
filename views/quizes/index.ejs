@@ -8,6 +8,7 @@
     <tr>
       <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
 			Tema: (<%= quizes[i].tema %>)</td>
+			<%if(session.user){%>
       <td><a href="quizes/<%= quizes[i].id %>/edit"><button>Editar</button></a></td>
 			<td>
 	        <form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
@@ -16,8 +17,11 @@
 	          </button>
 	        </form>
       </td>
+			<% } %>
 		</tr>
   <% } %>
 </table>
 <p/>
+<%if(session.user){%>
 <a href="/quizes/new"><button>Crear pregunta</button></a>
+<% } %>
